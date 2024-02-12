@@ -86,7 +86,7 @@ module ExpectedBehavior
         readonly_attributes_changed = archived? && changed? && !archived_at_changed? && !archive_number_changed?
         return unless readonly_attributes_changed
 
-        errors.add(:base, "Cannot modify an archived record.")
+        errors.add(:base, I18n.t('common.errors.acts_as_archival.cannot_modify_archived_record'))
       end
 
       def raise_if_not_archival
